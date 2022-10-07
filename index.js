@@ -2,11 +2,6 @@
 const http = require('http')
 const fs= require("fs");
 
-
-
-
-
-
 let homecontent="";
 let filecontent="";
 let reg="";
@@ -26,12 +21,6 @@ fs.readFile("project.html",
     }
    filecontent=fil;
 })
-
-
-
-
-
-
 
 
 fs.readFile("registration.html",
