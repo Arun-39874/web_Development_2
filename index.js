@@ -1,36 +1,31 @@
+const http = require("http");
+const fs = require("fs");
 
-const http = require('http')
-const fs= require("fs");
+let homeContent = "";
+let projectContent = "";
+let registration = "";
 
-let homecontent="";
-let filecontent="";
-let reg="";
-fs.readFile("home.html",
-(err,home) => {
-if(err){
+fs.readFile("home.html", (err, home) => {
+  if (err) {
     throw err;
-}
-homecontent=home;
+  }
+  homeContent = home;
 });
 
-fs.readFile("project.html",
-(err,fil) => {
-    if(err)
-    {
-        throw err;
-    }
-   filecontent=fil;
-})
+fs.readFile("project.html", (err, project) => {
+  if (err) {
+    throw err;
+  }
+  projectContent = project;
+});
 
-
-fs.readFile("registration.html",
-(err,regf) => {
-    if(err)
-    {
-        throw err;
+fs.readFile("registration.html", (err, registration) => {
+    if (err) {
+      throw err;
     }
- reg=regf;
-})
+    registration = registration;
+  });
+
 let args=require("minimist")(process.argv.slice(2));
 http.createServer((request,response) =>{
     let url =request.url
