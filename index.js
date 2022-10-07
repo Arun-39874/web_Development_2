@@ -17,14 +17,14 @@ fs.readFile("project.html", (err, project) => {
     throw err;
   }
   projectContent = project;
-});
+})
 
 fs.readFile("registration.html", (err, regf) => {
     if (err) {
       throw err;
     }
     registration = regf;
-  });
+  })
 
 let args=require("minimist")(process.argv.slice(2));
 http.createServer((request,response) =>{
