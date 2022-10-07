@@ -19,11 +19,11 @@ fs.readFile("project.html", (err, project) => {
   projectContent = project;
 });
 
-fs.readFile("registration.html", (err, registration) => {
+fs.readFile("registration.html", (err, regf) => {
     if (err) {
       throw err;
     }
-    registration = registration;
+    registration = regf;
   });
 
 let args=require("minimist")(process.argv.slice(2));
